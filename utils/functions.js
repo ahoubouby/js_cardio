@@ -35,7 +35,7 @@ const swapAllTable = ([x, ...xs]) => (def(x) ? [...swapAllTable(xs), x] : []);
 const filter = ([x, ...xs], fn) =>
   def(x) ? (fn(x) ? [x, ...filter(xs, fn)] : [...filter(xs, fn)]) : [];
 
-  
+
 const reject = ([x, ...xs], fn) => {
   if (undef(x)) return [];
   if (!fn(x)) {
@@ -56,5 +56,6 @@ module.exports = {
   isArray,
   swapAllTable,
   filter,
-  reject
+  reject,
+  reduce
 };

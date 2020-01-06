@@ -5,7 +5,8 @@ const {
   isString,
   isEmpty,
   formatStr,
-  flatten
+  flatten,
+  reduce
 } = require("./utils/functions");
 
 const tab = [1, 3, 4, 2, 2, 34, -2, 1, 3, 4, 2, 2, 34];
@@ -51,6 +52,19 @@ const chengeLettres = str => {
   });
   return newStr.toLowerCase().replace(/a|e|i|o|u/gi, c => c.toUpperCase());
 };
+
+const util = (length) => Array(length).fill().map((_,id )=> id);
+const isPrime = i => {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) {return false};
+  }
+  return true;
+};
+const sumAllPrimes =  (tab) => {
+  const sumPrimes = (acc, v) => isPrime(v) ? acc + v : acc ;
+  return reduce(tab, sumPrimes, -1);
+}
+
 module.exports = {
   sum,
   reverse,
