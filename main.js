@@ -4,7 +4,8 @@ const {
   isAFun,
   isString,
   isEmpty,
-  formatStr
+  formatStr,
+  flatten
 } = require("./utils/functions");
 
 const tab = [1, 3, 4, 2, 2, 34, -2, 1, 3, 4, 2, 2, 34];
@@ -41,8 +42,10 @@ const countWordLengh = arr =>
 
 const isAnagram = (str1, str2) => {
   console.log(formatStr(str1));
-return formatStr(str1) === formatStr(str2);
-} 
+  return formatStr(str1) === formatStr(str2);
+};
+
+const flatArray = tab => flatten(tab);
 module.exports = {
   sum,
   reverse,
@@ -51,5 +54,6 @@ module.exports = {
   minOrMax,
   countOcc,
   countWordLengh,
-  isAnagram
+  isAnagram,
+  flatArray
 };
