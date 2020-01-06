@@ -1,13 +1,21 @@
-const { log, def, isAFun, isString , isEmpty} = require("./utils/functions"); 
-
+const {
+  log,
+  def,
+  isAFun,
+  isString,
+  isEmpty,
+  formatStr
+} = require("./utils/functions");
 
 const tab = [1, 3, 4, 2, 2, 34, -2, 1, 3, 4, 2, 2, 34];
 
-const sum = ([head, ...tail]) => (def(head) ? head + sum (tail): 0);
+const sum = ([head, ...tail]) => (def(head) ? head + sum(tail) : 0);
 
-const reverse = ([head, ...tail]) => (def(head) ?  [...reverse(tail), head]: []);
+const reverse = ([head, ...tail]) =>
+  def(head) ? [...reverse(tail), head] : [];
 
-const capitalizeString = ([head, ...tail]) => def (head) ?`${head.toUpperCase()}${tail.join("")}`:"";
+const capitalizeString = ([head, ...tail]) =>
+  def(head) ? `${head.toUpperCase()}${tail.join("")}` : "";
 
 const capitalizeAWord = input =>
   isString(input)
@@ -28,10 +36,13 @@ const countOcc = arr =>
     };
   }, {});
 
-  const countWordLengh = arr =>
-    arr.reduce((acc, cv) => ({ ...acc, [cv]: cv.length}), {});
+const countWordLengh = arr =>
+  arr.reduce((acc, cv) => ({ ...acc, [cv]: cv.length }), {});
 
-
+const isAnagram = (str1, str2) => {
+  console.log(formatStr(str1));
+return formatStr(str1) === formatStr(str2);
+} 
 module.exports = {
   sum,
   reverse,
@@ -39,5 +50,6 @@ module.exports = {
   capitalizeAWord,
   minOrMax,
   countOcc,
-  countWordLengh
+  countWordLengh,
+  isAnagram
 };
