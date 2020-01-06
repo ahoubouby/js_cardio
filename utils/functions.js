@@ -5,6 +5,10 @@ const isString = s => typeof s === "string";
 const isEmpty = arr => arr.length === 0;
 const isArray = x => Array.isArray(x);
 
+const reduce = ([x, ...xs], fn, memo = 0, i = 0) =>
+  def(x) ? reduce(xs, fn, fn(memo, x, i), i + 1) : memo;
+
+
 const flatten = ([x, ...xs]) =>
   def(x)
     ? isArray(x)
