@@ -40,12 +40,17 @@ const countOcc = arr =>
 const countWordLengh = arr =>
   arr.reduce((acc, cv) => ({ ...acc, [cv]: cv.length }), {});
 
-const isAnagram = (str1, str2) => {
-  console.log(formatStr(str1));
-  return formatStr(str1) === formatStr(str2);
-};
+const isAnagram = (str1, str2) =>  formatStr(str1) === formatStr(str2);
 
 const flatArray = tab => flatten(tab);
+
+const chengeLettres = str => {
+  const newStr = str.replace(/[a-z]/gi, c => {
+    if (c === "z" || c === "Z") return "a";
+    return String.fromCharCode(c.charCodeAt() + 1);
+  });
+  return newStr.toLowerCase().replace(/a|e|i|o|u/gi, c => c.toUpperCase());
+};
 module.exports = {
   sum,
   reverse,
@@ -55,5 +60,6 @@ module.exports = {
   countOcc,
   countWordLengh,
   isAnagram,
-  flatArray
+  flatArray,
+  chengeLettres
 };
