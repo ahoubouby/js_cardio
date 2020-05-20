@@ -9,7 +9,7 @@ describe("testing sum fucntion", () => {
     expect(sum(tabZero)).toBe(0);
   });
   it("test empty table", () => {
-    expect(sum(tabZero)).toBe(0);
+    expect(sum(emptyTable)).toBe(0);
   });
 
   it("test against full table 90", () => {
