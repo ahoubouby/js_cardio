@@ -57,6 +57,7 @@ const until = (length) =>
   Array(length)
     .fill()
     .map((_, id) => id);
+
 const isPrime = (i) => {
   for (let j = 2; j < i; j++) {
     if (i % j === 0) {
@@ -82,4 +83,5 @@ module.exports = {
   flatArray,
   chengeLettres,
   until,
+  isPrime,
 };
