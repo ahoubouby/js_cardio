@@ -73,6 +73,9 @@ const sumAllPrimes = (tab) => {
 
 const factorial = (n) => (n == 0 ? 1 : n * factorial(n - 1));
 
+//TODO
+// count of pair composition for given number
+
 module.exports = {
   sum,
   reverse,
