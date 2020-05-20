@@ -71,6 +71,8 @@ const sumAllPrimes = (tab) => {
   return reduce(tab, sumPrimes, -1);
 };
 
+const factorial = (n) => (n == 0 ? 1 : n * factorial(n - 1));
+
 module.exports = {
   sum,
   reverse,
@@ -84,4 +86,5 @@ module.exports = {
   chengeLettres,
   until,
   isPrime,
+  factorial,
 };
