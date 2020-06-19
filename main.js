@@ -11,7 +11,9 @@ const {
 
 const tab = [1, 3, 4, 2, 2, 34, -2, 1, 3, 4, 2, 2, 34];
 
+const add = (x, y) => x + y;
 const sum = ([head, ...tail]) => (def(head) ? head + sum(tail) : 0);
+const sumWithReduce = (tab) => tab.reduce(add, 0);
 
 const reverse = ([head, ...tail]) =>
   def(head) ? [...reverse(tail), head] : [];
@@ -90,4 +92,5 @@ module.exports = {
   until,
   isPrime,
   factorial,
+  sumWithReduce,
 };
